@@ -1,19 +1,13 @@
 [net.launchpad.plank.dock.settings]
-dock-items=['gala-multitaskingview.dockitem','org.gnome.Epiphany.dockitem','org.pantheon.mail.dockitem','io.elementary.calendar.dockitem','io.elementary.music.dockitem','io.elementary.videos.dockitem','io.elementary.photos.dockitem','io.elementary.switchboard.dockitem','io.elementary.appcenter.dockitem']
+dock-items=['gala-multitaskingview.dockitem','com.github.cassidyjames.ephemeral.dockitem','io.elementary.calendar.dockitem','io.elementary.music.dockitem','io.elementary.videos.dockitem','io.elementary.photos.dockitem','io.elementary.switchboard.dockitem']
 hide-delay=250
 hide-mode='window-dodge'
 show-dock-item=false
-theme='Gtk+'
-
-[org.freedesktop.ibus.general.hotkey]
-triggers=['<Control>space']
-
-[org.freedesktop.ibus.panel]
-show=1
+theme='Transparent'
 
 [org.gnome.desktop.background]
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/elementaryos-default'
+picture-uri='file://@data_dir@@/backgrounds/elementaryos-default'
 primary-color='#000000'
 
 [org.gnome.desktop.datetime]
@@ -28,7 +22,6 @@ xkb-options=['grp:alt_shift_toggle']
 [org.gnome.desktop.interface]
 cursor-theme='elementary'
 document-font-name='Open Sans 10'
-font-name='Inter 9'
 gtk-theme='elementary'
 icon-theme='elementary'
 monospace-font-name='Roboto Mono 10'
@@ -92,16 +85,6 @@ mouse-button-modifier='<Super>'
 resize-with-right-button=true
 theme='elementary'
 
-[org.gnome.Epiphany.ui]
-expand-tabs-bar=false
-tabs-bar-visibility-policy='always'
-
-[org.gnome.Epiphany.web]
-cookies-policy='no-third-party'
-do-not-track=false
-enable-adblock=false
-enable-smooth-scrolling=true
-
 [org.gnome.mutter]
 auto-maximize=false
 overlay-key='Super_L'
@@ -111,10 +94,6 @@ workspaces-only-on-primary=true
 [org.gnome.mutter.keybindings]
 toggle-tiled-left=['<Control><Super>Left']
 toggle-tiled-right=['<Control><Super>Right']
-
-[org.gnome.nm-applet]
-disable-connected-notifications=true
-show-applet=false
 
 [org.gnome.settings-daemon.peripherals.keyboard]
 numlock-state='off'
@@ -127,18 +106,11 @@ scroll-method='two-finger-scrolling'
 [org.gnome.settings-daemon.plugins.background]
 active=false
 
-[org.gnome.settings-daemon.plugins.color]
-night-light-temperature=4500
-
 [org.gnome.settings-daemon.plugins.media-keys]
 terminal=['<Super>t']
 
 [org.gnome.settings-daemon.plugins.power]
 idle-dim=false
-
-[org.gnome.settings-daemon.plugins.screensaver-proxy]
-# Allows light-locker to accept DBus
-active=false
 
 [org.gnome.settings-daemon.plugins.xsettings]
 antialiasing='rgba'
@@ -147,9 +119,6 @@ overrides={'Gtk/DialogsUseHeader': <0>, 'Gtk/EnablePrimaryPaste': <0>, 'Gtk/Shel
 
 [org.gtk.Settings.FileChooser]
 sort-directories-first=true
-
-[org.onboard]
-theme='/usr/share/onboard/themes/Nightshade.theme'
 
 [org.pantheon.desktop.gala.behavior]
 overlay-action='io.elementary.shortcut-overlay'

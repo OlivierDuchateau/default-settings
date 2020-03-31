@@ -1,0 +1,10 @@
+/**
+* SPDX-License-Identifier: BSD-2-Clause
+* Copyright (c) 2020, Olivier Duchateau <duchateau.olivier@gmail.com>
+* All rights reserved.
+*
+*/
+
+namespace Config {
+	public const string INSTALL_PREFIX = "@install_prefix@";
+}

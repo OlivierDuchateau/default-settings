@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=@libexec_dir@/plank-initial-setup
+X-GNOME-Autostart-Phase=EarlyInitialization
+Name=Plank Initialization
+Terminal=false
+NoDisplay=true
