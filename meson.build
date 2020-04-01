@@ -1,6 +1,6 @@
 project('elementary-settings',
         'c', 'vala',
-        version: '5.1.2.2')
+        version: '5.1.2.3')
 
 prefix = get_option('prefix')
 libexec_dir = join_paths(prefix, get_option('libexecdir'))
