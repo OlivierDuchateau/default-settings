@@ -28,3 +28,4 @@ conf_dep = declare_dependency(sources: config_file,
 subdir('src')
 subdir('data')
 subdir('launchers')
+subdir('accountsservice')
