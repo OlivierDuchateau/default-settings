@@ -4,6 +4,7 @@ project('elementary-settings',
 
 prefix = get_option('prefix')
 libexec_dir = join_paths(prefix, get_option('libexecdir'))
+data_dir = join_paths(prefix, get_option('datadir'))
 
 vapi_dir = join_paths(meson.current_source_dir(), 'vapi')
 add_project_arguments(['--vapidir', vapi_dir],
