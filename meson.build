@@ -9,19 +9,20 @@ vapi_dir = join_paths(meson.current_source_dir(), 'vapi')
 add_project_arguments(['--vapidir', vapi_dir],
                       language: 'vala')
 
-conf_data = configuration_data()
-conf_data.set('install_prefix', prefix)
-configure_file(input: 'config.vala.in',
-               output: 'config.vala',
-               configuration: conf_data)
-
 dependencies = [
 	dependency('glib-2.0'),
 	dependency('gobject-2.0'),
 	dependency('gio-2.0'),
 	dependency('accountsservice')]
 
-conf_dir = include_directories('.')
+conf_data = configuration_data()
+conf_data.set('install_prefix', prefix)
+config_file = configure_file(input: 'config.vala.in',
+                             output: 'config.vala',
+                             configuration: conf_data)
+
+conf_dep = declare_dependency(sources: config_file,
+                              include_directories: include_directories('.'))
 
 subdir('src')
 subdir('data')
