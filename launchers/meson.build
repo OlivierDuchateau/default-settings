@@ -8,7 +8,7 @@ launcher_files = ['gala-multitaskingview.dockitem',
                   'io.elementary.switchboard.dockitem']
 
 launcher_conf = configuration_data()
-launcher_conf.set('data_dir', join_paths(prefix, get_option('datadir'))
+launcher_conf.set('data_dir', join_paths(prefix, get_option('datadir')))
 
 plank_launchers_dir = join_paths(prefix, get_option('datadir'),
                                  'plank', 'launchers')

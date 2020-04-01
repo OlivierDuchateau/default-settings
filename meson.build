@@ -21,6 +21,8 @@ dependencies = [
 	dependency('gio-2.0'),
 	dependency('accountsservice')]
 
-#subdir('src')
+conf_dir = include_directories('.')
+
+subdir('src')
 subdir('data')
 subdir('launchers')
