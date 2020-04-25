@@ -134,25 +134,6 @@ set_plank_user_config_dir (string parent) {
 }
 
 static void
-set_plank_autostart (string parent) {
-    string autostart_dir;
-    GLib.File src;
-
-    autostart_dir = set_path (parent, "autostart");
-    create_subdirectories (autostart_dir);
-
-    src = GLib.File.new_for_path (set_path (Config.INSTALL_PREFIX,
-                                            "share/applications/plank.desktop"));
-    try {
-        src.copy (GLib.File.new_for_path (set_path (autostart_dir,
-                                                    "plank.desktop")),
-                  GLib.FileCopyFlags.TARGET_DEFAULT_PERMS);
-    } catch (GLib.Error err) {
-        stderr.printf ("%s\n", err.message);
-    }
-}
-
-static void
 plank_initial_setup () {
     unowned string config_dir;
     string file;
@@ -168,39 +149,23 @@ plank_initial_setup () {
             // Remove and recreate
             if (content != "yes") {
                 GLib.FileUtils.remove (file);
-            }
-            set_plank_user_config_dir (config_dir);
-            set_plank_autostart (config_dir);
 
-            write_content (file);
+                set_plank_user_config_dir (config_dir);
+                write_content (file);
+            }
         } catch (GLib.FileError err) {
             stderr.printf ("%s\n", err.message);
         }
     }
     else {
         set_plank_user_config_dir (config_dir);
-        set_plank_autostart (config_dir);
-
         write_content (file);
     }
 }
 
 static int
 main (string[] args) {
-    Act.UserManager manager;
-    GLib.SList<unowned Act.User> users;
-    // Name of the current user
-    string current_user = GLib.Environment.get_user_name ();
-
-    manager = Act.UserManager.get_default ();
-    users = manager.list_users ();
-
-    foreach (unowned Act.User user in users) {
-        if (user.get_user_name () == current_user) {
-            plank_initial_setup ();
-            break;
-        }
-    }
+    plank_initial_setup ();
 
     return 0;
 }

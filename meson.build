@@ -6,15 +6,10 @@ prefix = get_option('prefix')
 libexec_dir = join_paths(prefix, get_option('libexecdir'))
 data_dir = join_paths(prefix, get_option('datadir'))
 
-vapi_dir = join_paths(meson.current_source_dir(), 'vapi')
-add_project_arguments(['--vapidir', vapi_dir],
-                      language: 'vala')
-
 dependencies = [
 	dependency('glib-2.0'),
 	dependency('gobject-2.0'),
-	dependency('gio-2.0'),
-	dependency('accountsservice')]
+	dependency('gio-2.0')]
 
 conf_data = configuration_data()
 conf_data.set('install_prefix', prefix)
