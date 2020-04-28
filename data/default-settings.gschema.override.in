@@ -7,7 +7,7 @@ theme='Transparent'
 
 [org.gnome.desktop.background]
 picture-options='zoom'
-picture-uri='file://@data_dir@@/backgrounds/elementaryos-default'
+picture-uri='file://@data_dir@/backgrounds/elementaryos-default'
 primary-color='#000000'
 
 [org.gnome.desktop.datetime]
